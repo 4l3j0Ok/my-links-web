@@ -10,10 +10,13 @@ def header() -> rx.Component:
             profile(
                 "./me.jpeg",
                 alt_text="Alejo Sarmiento",
-                width=Size.xxxxlarge.value,
+                width=[
+                    Size.xxxlarge.value,
+                    Size.xxxxlarge.value
+                ],
                 margin_right=Size.xlarge.value,
                 display="block",
-                flex_shrink= 0
+                flex_shrink=0
             ),
             rx.vstack(
                 rx.heading("Alejo Sarmiento", margin_y=".2em"),

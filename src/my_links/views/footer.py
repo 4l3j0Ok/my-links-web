@@ -4,6 +4,7 @@ from ..components.frame import frame
 from ..modules.config import App
 from ..styles.sizes import Size
 from ..components.logo import logo
+from ..styles.colors import Palette
 
 
 def footer() -> rx.Component:
@@ -20,6 +21,11 @@ def footer() -> rx.Component:
             rx.link(
                 f"{App.name.value} by {App.author.value}",
                 href=App.url.value,
+                color=Palette.cyan.value,
+                _hover={
+                    "color": Palette.pink.value,
+                },
+                is_external=False,
             ),
             rx.span(" "),
             App.version.value,

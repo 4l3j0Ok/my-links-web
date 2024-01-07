@@ -9,6 +9,6 @@ class Size(Enum):
     large = "1.5em"
     xlarge = "2em"
     xxlarge = "3em"
-    xxxlarge = "4em"
+    xxxlarge = "10em"
     xxxxlarge = "15em"
     xxxxxlarge = "20em"

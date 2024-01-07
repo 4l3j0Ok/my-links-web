@@ -12,12 +12,20 @@ STYLESHEETS = [
 BASE = {
     "background": Palette.black.value,
     "color": f"{Palette.white.value}",
-    "font_family": Font.DEFAULT.value,
-    "font_size": Size.small.value,
+    "font-family": Font.DEFAULT.value,
+    "font-size": Size.small.value,
+    "::selection": {
+        "background": Palette.pink.value,
+        "color": Palette.white.value,
+    },
+    "::moz-selection": {
+        "background": Palette.pink.value,
+        "color": Palette.white.value,
+    },
     rx.Heading: {
-        "font_family": Font.DEFAULT.value,
-        "font_size": Size.xlarge.value,
-        "margin_y": Size.small.value,
+        "font-family": Font.DEFAULT.value,
+        "font-size": Size.xlarge.value,
+        "margin-y": Size.small.value,
         "width": "100%",
     },
     rx.Button: {
@@ -27,7 +35,7 @@ BASE = {
         "text-align": "start",
         "width": "100%",
         "height": "auto",
-        "margin_y": Size.small.value,
+        "margin-y": Size.small.value,
         "padding": Size.medium.value,
         "background": f"{Palette.light_gray.value}",
         ":hover": {
@@ -35,6 +43,15 @@ BASE = {
         },
         "transition": ".3s ease-in-out",
         "border-radius": Size.medium.value,
+    },
+    rx.Image: {
+        "pointer-events": "none",
+        "user-select": "none",
+    },
+    rx.Link: {
+        ":hover": {
+            "text-decoration": "none",
+        }
     },
 }
 
@@ -47,5 +64,5 @@ FRAME = {
     "border-radius": Size.medium.value,
     "flex-direction": "column",
     "padding": Size.xxlarge.value,
-    "margin_top": Size.xlarge.value,
+    "margin-top": Size.xlarge.value,
 }
