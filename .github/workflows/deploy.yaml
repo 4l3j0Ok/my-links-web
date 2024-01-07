@@ -1,0 +1,42 @@
+name: deploy
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["build"]
+    types:
+      - completed
+  push:
+    branches:
+      - main
+    paths:
+      - 'stack/**'
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: self-hosted
+    environment: prod
+    steps:
+    -
+      name: Checkout
+      uses: actions/checkout@master
+    -
+      name: Set up Stack
+      run: |
+        mkdir -p $PROJECT_PATH
+        cp -f ./stack/prod.compose.yml $PROJECT_PATH/docker-compose.yml
+        cp -f ./stack/config/nginx.conf $PROJECT_PATH/config/nginx.conf
+        mkdir -p $PROJECT_PATH/config
+        echo "$APP_ENV_CONTENT" > $PROJECT_PATH/config/.app.env
+        echo "$WEBSERVER_ENV_CONTENT" > $PROJECT_PATH/config/.webserver.env
+      env:
+        PROJECT_PATH: ${{ secrets.PROJECT_PATH }}
+        APP_ENV_CONTENT: ${{ secrets.APP_ENV_CONTENT }}
+        WEBSERVER_ENV_CONTENT: ${{ secrets.WEBSERVER_ENV_CONTENT }}
+    -
+      name: Pull changes and restart
+      run: |
+        cd ${{ secrets.PROJECT_PATH }}
+        docker compose down --volumes --remove-orphans
+        docker compose pull
+        docker compose up -d

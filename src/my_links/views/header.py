@@ -10,7 +10,7 @@ def header() -> rx.Component:
             profile(
                 "./me.jpeg",
                 alt_text="Alejo Sarmiento",
-                width=Size.most_large_ever_seen.value,
+                width=Size.xxxxlarge.value,
                 margin_right=Size.xlarge.value,
                 display="block",
                 flex_shrink= 0

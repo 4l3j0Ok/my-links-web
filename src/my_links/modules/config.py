@@ -1,4 +1,12 @@
 from enum import Enum
+import os
+
+
+class App(Enum):
+    name = "Mis links"
+    author = "Alejo Sarmiento"
+    version = "v1"
+    url = os.getenv("APP_URL", "https://links.alejoide.com")
 
 
 class StyleSheet(Enum):
@@ -32,9 +40,9 @@ class Professional(Enum):
         },
         "email": {
             "title": "Email",
-            "description": "Contáctame por correo electrónico: contacto@alejoide.com.",
+            "description": "Contáctame por correo electrónico: alejofsarmiento@gmail.com.",
             "icon": "fa-solid:envelope",
-            "href": "mailto:contacto@alejoide.com"
+            "href": "mailto:alejofsarmiento@gmail.com"
         }
     }
 
@@ -64,5 +72,17 @@ class Social(Enum):
             "description": "Suscríbete a mi canal de Youtube de juegos.",
             "icon": "fa-brands:youtube",
             "href": "http://www.youtube.com/@AlejoideFG"
+        },
+        "twitch": {
+            "title": "Twitch",
+            "description": "A veces hago direcots en Twitch.",
+            "icon": "fa-brands:twitch",
+            "href": "https://twitch.tv/alejoiiide"
+        },
+        "spotify": {
+            "title": "Spotify",
+            "description": "Mis playlists en Spotify.",
+            "icon": "fa-brands:spotify",
+            "href": "https://open.spotify.com/user/212fbxafmve6gvfzkq4hdyelq?si=60ac2d5ee1e74fb7"
         }
     }

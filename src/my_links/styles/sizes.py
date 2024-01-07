@@ -10,4 +10,5 @@ class Size(Enum):
     xlarge = "2em"
     xxlarge = "3em"
     xxxlarge = "4em"
-    most_large_ever_seen = "15em"
+    xxxxlarge = "15em"
+    xxxxxlarge = "20em"
