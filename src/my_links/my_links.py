@@ -23,4 +23,3 @@ app = rx.App(
         rx.script(GoogleAnalytics.SEND_DATA_SCRIPT.value),
     ]
 )
-app.compile()

@@ -3,7 +3,7 @@ import os
 
 
 class App(Enum):
-    name = "Mis links"
+    name = "My Links"
     author = "Alejo Sarmiento"
     version = "v1"
     url = os.getenv("APP_URL", "https://links.alejoide.com")
