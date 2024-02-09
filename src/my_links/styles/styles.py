@@ -29,7 +29,7 @@ BASE = {
         "text_align": "start",
         "width": "100%",
         "height": "auto",
-        "font_size": Size.medium.value,
+        "font_size": Size.normal.value,
         "margin_y": Size.small.value,
         "padding": Size.normal.value,
         "background": f"{Palette.light_gray.value}",
@@ -58,12 +58,12 @@ BASE = {
 
 
 FRAME = {
-    "width": "100%",
+    "width": "90%",
     "max_width": "600px",
     "align_items": "center",
     "background": Palette.dark_gray.value,
     "border_radius": Size.normal.value,
     "flex_direction": "column",
-    "padding": Size.xxlarge.value,
+    "padding": Size.xlarge.value,
     "margin_top": Size.xlarge.value,
 }
