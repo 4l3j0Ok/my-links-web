@@ -4,7 +4,7 @@ from enum import Enum
 class Size(Enum):
     xxsmall = "0.3em"
     xsmall = "0.5em"
-    small = "0.8em"
+    small = "0.9em"
     normal = "1em"
     medium = "1.2em"
     large = "1.5em"
