@@ -23,7 +23,7 @@ BASE = {
         "color": Palette.white.value,
     },
     ".button": {
-        "display": "inline_block",
+        "display": "inline-block",
         "overflow": "hidden",
         "white_space": "wrap",
         "text_align": "start",
@@ -36,7 +36,7 @@ BASE = {
         ":hover": {
             "background": f"{Palette.xlight_gray.value}"
         },
-        "transition": ".3s ease_in_out",
+        "transition": ".3s ease-in-out",
         "border_radius": Size.medium.value,
     },
     rx.Heading: {
