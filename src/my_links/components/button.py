@@ -4,16 +4,16 @@ from ..styles.sizes import Size
 
 
 def button(title: str = "", description: str = "", icon: str = "", href: str = "#", **args) -> rx.Component:
-    return rx.link(
-        rx.hstack(
+    return rx.chakra.link(
+        rx.chakra.hstack(
             iconify(
                 icon,
                 font_size=Size.xlarge.value,
                 padding_x=Size.xsmall.value,
             ),
-            rx.vstack(
-                rx.text(title, as_="b"),
-                rx.text(
+            rx.chakra.vstack(
+                rx.chakra.text(title, as_="b"),
+                rx.chakra.text(
                     description,
                     font_size=Size.small.value,
                 ),

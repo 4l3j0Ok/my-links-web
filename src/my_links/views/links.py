@@ -12,7 +12,7 @@ def links() -> rx.Component:
     social = config.Social.links.value
     return frame(
         # Highlight
-        rx.heading("Destacados"),
+        rx.chakra.heading("Destacados"),
         *[button(
             title=item.get("title"),
             description=item.get("description"),
@@ -20,7 +20,7 @@ def links() -> rx.Component:
             href=item.get("href")
         ) for item in highlight.values()],
         # Professional
-        rx.heading("Profesional"),
+        rx.chakra.heading("Profesional"),
         *[button(
             title=item.get("title"),
             description=item.get("description"),
@@ -28,7 +28,7 @@ def links() -> rx.Component:
             href=item.get("href")
         ) for item in professional.values()],
         # Social
-        rx.heading("Social"),
+        rx.chakra.heading("Social"),
         *[button(
             title=item.get("title"),
             description=item.get("description"),

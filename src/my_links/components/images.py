@@ -10,7 +10,7 @@ def profile(
         border_color: colors = colors.Palette.light_gray.value,
         **args
     ) -> rx.Component:
-    return rx.image(
+    return rx.chakra.image(
         src=asset,
         alt=alt_text,
         border_radius="50%",

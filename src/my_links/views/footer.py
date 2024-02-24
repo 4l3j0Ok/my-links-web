@@ -15,10 +15,10 @@ def footer() -> rx.Component:
             height="auto",
             margin_bottom=Size.large.value,
         ),
-        rx.text(
+        rx.chakra.text(
             f"© 2023 - {date.today().year}" if date.today().year > 2023 else f"© 2023",
-            rx.span(" "),
-            rx.link(
+            rx.chakra.span(" "),
+            rx.chakra.link(
                 f"{App.name.value} by {App.author.value}",
                 href=App.url.value,
                 color=Palette.cyan.value,
@@ -27,9 +27,9 @@ def footer() -> rx.Component:
                 },
                 is_external=False,
             ),
-            rx.span(" "),
+            rx.chakra.span(" "),
             App.version.value,
-            rx.span("."),
+            rx.chakra.span("."),
         ),
         margin_bottom=Size.large.value,
     )

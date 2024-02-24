@@ -3,8 +3,8 @@ from ..styles import styles
 
 
 def frame(*args, **kwargs):
-    return rx.vstack(
-        rx.flex(
+    return rx.chakra.vstack(
+        rx.chakra.flex(
             *args,
             **kwargs,
             style=styles.FRAME

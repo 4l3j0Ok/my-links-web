@@ -5,14 +5,14 @@ from ..styles import styles
 
 
 def logo(with_link = True, **kwargs) -> rx.Component:
-    return rx.link(
-            rx.image(
+    return rx.chakra.link(
+            rx.chakra.image(
             src="./logo.svg",
             href=App.url.value,
             is_external=True,
             **kwargs,
         )
-    ) if with_link else rx.image(
+    ) if with_link else rx.chakra.image(
             src="./logo.svg",
             **kwargs,
         )
