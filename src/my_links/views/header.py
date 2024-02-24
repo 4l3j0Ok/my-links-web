@@ -6,7 +6,7 @@ from ..components.frame import frame
 
 def header() -> rx.Component:
     return frame(
-        rx.hstack(
+        rx.chakra.hstack(
             profile(
                 "./me.jpeg",
                 alt_text="Alejo Sarmiento",
@@ -18,9 +18,9 @@ def header() -> rx.Component:
                 display="block",
                 flex_shrink=0
             ),
-            rx.vstack(
-                rx.heading("Alejo Sarmiento", margin_y=".2em"),
-                rx.text(
+            rx.chakra.vstack(
+                rx.chakra.heading("Alejo Sarmiento", margin_y=".2em"),
+                rx.chakra.text(
                     "SRE y desarrollador de software.",
                     flex_wrap="wrap",
                 ),

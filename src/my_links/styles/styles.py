@@ -39,17 +39,17 @@ BASE = {
         "transition": ".3s ease-in-out",
         "border_radius": Size.medium.value,
     },
-    rx.Heading: {
+    rx.chakra.Heading: {
         "font_family": Font.DEFAULT.value,
         "font_size": Size.xlarge.value,
         "margin_y": Size.small.value,
         "width": "100%",
     },
-    rx.Image: {
+    rx.chakra.Image: {
         "pointer_events": "none",
         "user_select": "none",
     },
-    rx.Link: {
+    rx.chakra.Link: {
         ":hover": {
             "text_decoration": "none",
         }

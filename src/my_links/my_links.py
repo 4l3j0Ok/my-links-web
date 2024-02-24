@@ -8,7 +8,7 @@ from .modules.config import GoogleAnalytics
 
 @rx.page(route="/", title="Alejoide | Mis Links", description="Todos mis links en un solo lugar.")
 def index() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         header(),
         links(),
         footer(),
