@@ -30,9 +30,9 @@ jobs:
       -
         name: Add env files
         run: |
-          echo "$APP_ENV_CONTENT" > ./src/.env
+          echo "$FRONTEND_ENV_CONTENT" > ./src/.env
         env:
-          APP_ENV_CONTENT: ${{ secrets.APP_ENV_CONTENT }}
+          FRONTEND_ENV_CONTENT: ${{ secrets.FRONTEND_ENV_CONTENT }}
       -
         name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
