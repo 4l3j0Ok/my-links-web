@@ -1,26 +1,18 @@
 services:
-  app:
-    image: alejoide/my-links-web:latest
-    container_name: my-links-app
+
+
+  frontend:
+    image: alejoide/my-links-web:dev
     build:
       context: ../src
+      dockerfile: ./Dockerfile
+    container_name: my-links-frontend
     env_file:
-      - ./config/.app.env
-    volumes:
-      - static:/app/.web/_static
-
-  webserver:
-    image: nginx:latest
-    container_name: my-links-webserver
-    env_file:
-      - ./config/.webserver.env
+      - ./config/.frontend.env
     ports:
       - 80:80
     volumes:
-      - static:/usr/share/nginx/html
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - app
     networks:
       - default
 
