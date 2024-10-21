@@ -82,7 +82,7 @@ class Social(Enum):
             "title": "Youtube | Juegos",
             "description": "Mi canal de Youtube de juegos.",
             "icon": "fa-brands:youtube",
-            "href": "http://www.youtube.com/@AlejoideFG"
+            "href": "https://www.youtube.com/channel/UC3mkfCRW6LpbaTUSTTpmXFw"
         },
         "twitch": {
             "title": "Twitch",
