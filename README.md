@@ -1,52 +1,55 @@
-# Astro Starter Kit: Basics
+# My Links Web - Astro
 
-```sh
-pnpm create astro@latest -- --template basics
+Todos mis links en un solo lugar. Versión moderna construida con Astro.
+
+## 🚀 Descripción
+
+Esta es la versión Astro de mi sitio de links personal. Utiliza componentes puros de Astro y sigue las mejores prácticas de desarrollo web moderno.
+
+## ✨ Características
+
+- 🎨 Diseño moderno y profesional con tema oscuro
+- 🚀 Renderizado estático ultra-rápido con Astro
+- 📱 Totalmente responsivo y mobile-first
+- ♿ Accesible y optimizado para SEO
+- 🎯 Sin dependencias de React - 100% Astro puro
+- 🌐 Iconos mediante Iconify
+- ⚡ Optimizado para rendimiento
+
+## 🧞 Comandos
+
+Todos los comandos se ejecutan desde la raíz del proyecto:
+
+| Comando            | Acción                                               |
+| :----------------- | :--------------------------------------------------- |
+| `pnpm install`     | Instala las dependencias                             |
+| `pnpm run dev`     | Inicia el servidor de desarrollo en `localhost:4321` |
+| `pnpm run build`   | Construye el sitio de producción en `./dist/`        |
+| `pnpm run preview` | Previsualiza la build localmente antes de desplegar  |
+
+## 🎨 Personalización
+
+Los links se definen en [src/pages/index.astro](src/pages/index.astro). Para agregar o modificar links, edita las constantes `highlightLinks`, `professionalLinks` y `socialLinks`.
+
+### Colores
+
+Los colores se definen mediante variables CSS en [src/layouts/Layout.astro](src/layouts/Layout.astro):
+
+```css
+--color-bg-primary: #0a0a0a;
+--color-bg-secondary: #141414;
+--color-bg-card: #1a1a1a;
+--color-accent: #3b82f6;
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 📝 Licencia
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este proyecto está bajo la licencia especificada en el archivo LICENSE.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 👤 Autor
 
-## 🚀 Project Structure
+**Alejo Sarmiento**
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- GitHub: [@4l3j0Ok](https://github.com/4l3j0Ok)
+- LinkedIn: [alejoide](https://linkedin.com/in/alejoide)
+- Website: [alejoide.com](https://alejoide.com)

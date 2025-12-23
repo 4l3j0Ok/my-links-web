@@ -1,0 +1,103 @@
+---
+interface Props {
+    name: string;
+    title: string;
+    imageUrl?: string;
+}
+
+const { name, title, imageUrl = "/me.jpeg" } = Astro.props;
+---
+
+<header class="header">
+    <div class="header-container">
+        <div class="header-content">
+            <div class="avatar-container">
+                <img src={imageUrl} alt={name} class="avatar" />
+            </div>
+            <div class="header-text">
+                <h1 class="name">{name}</h1>
+                <p class="title">{title}</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header {
+        width: 100%;
+        padding: var(--spacing-xl) var(--spacing-md);
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-container {
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-lg);
+        background: var(--color-bg-secondary);
+        padding: var(--spacing-xl);
+        border-radius: var(--corner-radius);
+        corner-shape: squircle;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .avatar-container {
+        flex-shrink: 0;
+    }
+
+    .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--color-accent);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    .header-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .name {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        margin: 0;
+    }
+
+    .title {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+        }
+
+        .name {
+            font-size: 1.5rem;
+        }
+
+        .title {
+            font-size: 0.9rem;
+        }
+    }
+</style>

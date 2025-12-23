@@ -1,0 +1,56 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="link-section">
+    <div class="section-container">
+        <h2 class="section-title">{title}</h2>
+        <div class="links-grid">
+            <slot />
+        </div>
+    </div>
+</section>
+
+<style>
+    .link-section {
+        width: 100%;
+        padding: 0 var(--spacing-md);
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+        margin: 0 0 var(--spacing-lg) 0;
+        padding-left: var(--spacing-xs);
+    }
+
+    .links-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    @media (max-width: 640px) {
+        .section-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .links-grid {
+            gap: var(--spacing-sm);
+        }
+    }
+</style>

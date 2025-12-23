@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import LinkSection from "../components/LinkSection.astro";
+import LinkCard from "../components/LinkCard.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Datos de los links
+const highlightLinks = [
+	{
+		title: "Alejoide",
+		description: "Mi sitio web personal.",
+		icon: "dashicons:star-filled",
+		href: "https://alejoide.com",
+	},
+];
+
+const professionalLinks = [
+	{
+		title: "Github",
+		description: "Todos mis proyectos personales de código abierto.",
+		icon: "fa-brands:github",
+		href: "https://github.com/4l3j0Ok",
+	},
+	{
+		title: "Linkedin",
+		description: "Mi perfil profesional y red de contactos.",
+		icon: "fa-brands:linkedin",
+		href: "https://linkedin.com/in/alejoide",
+	},
+	{
+		title: "Email",
+		description:
+			"Contáctame por correo electrónico: alejofsarmiento@gmail.com.",
+		icon: "fa-solid:envelope",
+		href: "mailto:alejofsarmiento@gmail.com",
+	},
+];
+
+const socialLinks = [
+	{
+		title: "Instagram",
+		description: "Visita mi Instagram personal.",
+		icon: "ri:instagram-fill",
+		href: "https://instagram.com/4l3j0",
+	},
+	{
+		title: "Twitter",
+		description: "Mi perfil de Twitter personal.",
+		icon: "fa-brands:twitter",
+		href: "https://twitter.com/alejoide_",
+	},
+	{
+		title: "Youtube | General",
+		description:
+			"Mi canal de Youtube donde subo edits y contenido variado.",
+		icon: "fa-brands:youtube",
+		href: "https://www.youtube.com/@alejo_okay",
+	},
+	{
+		title: "Youtube | Juegos",
+		description: "Mi canal de Youtube de juegos.",
+		icon: "fa-brands:youtube",
+		href: "https://www.youtube.com/channel/UC3mkfCRW6LpbaTUSTTpmXFw",
+	},
+	{
+		title: "Twitch",
+		description: "A veces hago directos en Twitch.",
+		icon: "fa-brands:twitch",
+		href: "https://twitch.tv/alejoiiide",
+	},
+	{
+		title: "Spotify",
+		description: "Explora mis playlists en Spotify.",
+		icon: "fa-brands:spotify",
+		href: "https://open.spotify.com/user/212fbxafmve6gvfzkq4hdyelq?si=60ac2d5ee1e74fb7",
+	},
+];
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<Header
+			name="Alejo Sarmiento"
+			title="SRE y desarrollador de software."
+		/>
+
+		<LinkSection title="Destacados">
+			{highlightLinks.map((link) => <LinkCard {...link} />)}
+		</LinkSection>
+
+		<LinkSection title="Profesional">
+			{professionalLinks.map((link) => <LinkCard {...link} />)}
+		</LinkSection>
+
+		<LinkSection title="Social">
+			{socialLinks.map((link) => <LinkCard {...link} />)}
+		</LinkSection>
+
+		<Footer />
+	</main>
 </Layout>
+
+<style>
+	main {
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+</style>

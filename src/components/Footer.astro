@@ -1,0 +1,83 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <div class="footer-container">
+        <p class="footer-text">
+            © {currentYear}
+            <strong>Alejo Sarmiento</strong>. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        width: 100%;
+        padding: var(--spacing-xl) var(--spacing-md);
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    .footer-container {
+        width: 100%;
+        max-width: var(--max-width);
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-text {
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+        margin: 0 0 var(--spacing-xs) 0;
+    }
+
+    .footer-text strong {
+        color: var(--color-text-primary);
+        font-weight: 600;
+    }
+
+    .footer-subtext {
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+        margin: 0;
+    }
+
+    .heart {
+        color: #ef4444;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .footer-link {
+        color: var(--color-accent);
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--color-accent-hover);
+        text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+        .footer-text {
+            font-size: 0.8rem;
+        }
+
+        .footer-subtext {
+            font-size: 0.75rem;
+        }
+    }
+</style>
