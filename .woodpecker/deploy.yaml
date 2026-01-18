@@ -1,3 +1,6 @@
+depends_on:
+  - build
+
 steps:
   - name: create-artifact
     image: debian
