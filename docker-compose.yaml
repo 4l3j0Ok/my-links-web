@@ -1,5 +1,5 @@
 services:
-  frontend:
+  my-links-frontend:
     image: alejoide/my-links-web:latest
     container_name: my-links-frontend
     restart: unless-stopped
