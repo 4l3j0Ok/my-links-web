@@ -1,0 +1,85 @@
+steps:
+  - name: create-artifact
+    image: debian
+    commands:
+      - ls -lah
+      - tar -czf my-links-web.tar.gz docker-compose.yaml
+    when:
+      event:
+        - push
+        - manual
+      branch: main
+  - name: transfer-artifact
+    image: appleboy/drone-scp
+    settings:
+      host:
+        from_secret: deploy_host
+      username:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_ssh_key
+      port: 22
+      source:
+        - my-links-web.tar.gz
+      target: /tmp
+    when:
+      event:
+        - push
+        - manual
+      branch: main
+  - name: docker-login-ssh
+    image: appleboy/drone-ssh
+    environment:
+      DOCKER_USERNAME:
+        from_secret: dockerhub_username
+      DOCKER_PASSWORD:
+        from_secret: dockerhub_token
+    settings:
+      host:
+        from_secret: deploy_host
+      username:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_ssh_key
+      envs:
+        - DOCKER_USERNAME
+        - DOCKER_PASSWORD
+      port: 22
+      command_timeout: 1m
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_USERNAME" --password-stdin
+    when:
+      event:
+        - push
+        - manual
+        - deployment
+      branch: main
+  - name: exec-commands
+    image: appleboy/drone-ssh
+    environment:
+      DEPLOY_PATH:
+        from_secret: deploy_path
+    settings:
+      host:
+        from_secret: deploy_host
+      username:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_ssh_key
+      envs:
+        - DEPLOY_PATH
+      port: 22
+      command_timeout: 2m
+      script:
+        - mkdir -p /tmp/my-links-web
+        - tar -xzf /tmp/my-links-web.tar.gz -C /tmp/my-links-web
+        - cd $DEPLOY_PATH
+        - cp -f /tmp/my-links-web/docker-compose.yaml .
+        - docker compose pull
+        - docker compose up -d
+        - rm -rf /tmp/my-links-web*
+    when:
+      event:
+        - push
+        - manual
+      branch: main

@@ -1,0 +1,13 @@
+services:
+  frontend:
+    image: alejoide/my-links-web:latest
+    container_name: my-links-frontend
+    restart: unless-stopped
+    networks:
+      - default
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    name: nginx-proxy
+    external: true
