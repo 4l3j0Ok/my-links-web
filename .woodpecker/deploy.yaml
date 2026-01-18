@@ -10,7 +10,10 @@ steps:
     when:
       event:
         - tag
+        - push
         - manual
+      branch:
+        - main
   - name: transfer-artifact
     image: appleboy/drone-scp
     settings:
@@ -27,7 +30,10 @@ steps:
     when:
       event:
         - tag
+        - push
         - manual
+      branch:
+        - main
   - name: docker-login-ssh
     image: appleboy/drone-ssh
     environment:
@@ -52,7 +58,10 @@ steps:
     when:
       event:
         - tag
+        - push
         - manual
+      branch:
+        - main
   - name: exec-commands
     image: appleboy/drone-ssh
     environment:
@@ -80,4 +89,7 @@ steps:
     when:
       event:
         - tag
+        - push
         - manual
+      branch:
+        - main
