@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <main>
+        <h1>404</h1>
+        <h2>Página no encontrada</h2>
+        <p>La página que estás buscando no existe...</p>
+        <a class="button" href="/">Volver al inicio</a>
+    </main>
+</Layout>
+
+<style>
+    main {
+        height: 80vh;
+        padding: var(--spacing-lg);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .button {
+        margin-top: var(--spacing-md);
+        padding: var(--spacing-sm);
+        background: var(--color-bg-card);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: var(--corner-radius-sm);
+        corner-shape: squircle;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    .button:hover {
+        background: var(--color-bg-card-hover);
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+</style>
