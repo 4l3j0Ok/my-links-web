@@ -9,9 +9,8 @@ steps:
       - tar -czf my-links-web.tar.gz docker-compose.yaml
     when:
       event:
-        - push
+        - tag
         - manual
-      branch: main
   - name: transfer-artifact
     image: appleboy/drone-scp
     settings:
@@ -27,9 +26,8 @@ steps:
       target: /tmp
     when:
       event:
-        - push
+        - tag
         - manual
-      branch: main
   - name: docker-login-ssh
     image: appleboy/drone-ssh
     environment:
@@ -53,10 +51,8 @@ steps:
         - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_USERNAME" --password-stdin
     when:
       event:
-        - push
+        - tag
         - manual
-        - deployment
-      branch: main
   - name: exec-commands
     image: appleboy/drone-ssh
     environment:
@@ -83,6 +79,5 @@ steps:
         - rm -rf /tmp/my-links-web*
     when:
       event:
-        - push
+        - tag
         - manual
-      branch: main
