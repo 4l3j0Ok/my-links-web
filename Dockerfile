@@ -18,7 +18,7 @@ FROM build-deps AS build
 COPY . .
 RUN pnpm run build
 
-FROM nginx:alpine AS runtime
+FROM nginx:1.30.7-alpine AS runtime
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
